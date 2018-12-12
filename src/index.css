@@ -1,14 +1,205 @@
 body {
   margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-image: url('img/background.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+@font-face {
+  font-family: 'Aleo regular';
+  src: url('font/aleo.regular.otf');
+}
+@font-face {
+  font-family: 'Aleo bold';
+  src: url('font/aleo.bold.otf');
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+.container {
+  height: 80vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.centered {
+  flex-direction: column;
+}
+.centered > div {
+  color: white;
+  text-transform: uppercase;
+  border: 2px solid white;
+  border-radius: 23px;
+  padding: 17px 55px;
+  margin-top: 45px;
+  cursor: pointer;
+}
+
+nav div ul {
+  list-style-type: none;
+  color: white;
+  padding: 0;
+  width: 40%;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-family: 'Aleo regular';
+  letter-spacing: 0.2rem;
+}
+nav div ul li:nth-child(3) {
+  z-index: -1;
+}
+nav div ul img {
+  transform: scale(0.8);
+}
+nav div.flex ul {
+  justify-content: space-between;
+}
+
+footer {
+  color: #acacac;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 20px 80px;
+  letter-spacing: 0.1rem;
+  background: rgb(0, 0, 0, 0.45);
+  font-family: 'Aleo regular';
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: -1;
+}
+footer div.flex {
+  justify-content: space-between;
+}
+footer > div div.flex span:first-child::after {
+  content: '|';
+  margin: 0 15px;
+}
+footer > div > span {
+  text-transform: uppercase;
+}
+footer > div div:last-child span {
+  font-weight: bold;
+  color: white;
+}
+.outerPop {
+  height: 100vh;
+  width: 100%;
+  background: rgb(0, 0, 0, 0.7);
+  box-sizing: border-box;
+  position: absolute;
+}
+.popUp {
+  height: 335px;
+  width: 370px;
+  color: black;
+  position: absolute;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.popUp form {
+  flex-direction: column;
+}
+.popUp span {
+  margin-top: 42px;
+  margin-bottom: 50px;
+  font-size: 1.3rem;
+  font-family: 'Aleo bold';
+}
+.popUp input {
+  border: 0;
+  width: 260px;
+  border-bottom: 1px solid black;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #858889;
+  padding-bottom: 9px;
+  font-family: 'Aleo regular';
+}
+.popUp button {
+  padding: 17px 100px;
+  border: 0px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  background: #a83a5e;
+  letter-spacing: 4px;
+  font-family: 'Aleo regular';
+}
+
+@media all and (max-width: 1450px) {
+  nav div ul {
+    width: 50%;
+    font-size: 0.7rem;
+  }
+  nav div ul img {
+    transform: scale(0.75);
+  }
+}
+@media all and (max-width: 950px) {
+  nav div ul {
+    width: 70%;
+  }
+}
+@media all and (max-width: 780px) {
+  footer > div.flex {
+    flex-wrap: wrap;
+  }
+  footer > div.flex > div.flex {
+    width: 100%;
+    order: -1;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+}
+@media all and (max-width: 725px) {
+  .centered img {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  nav div ul {
+    width: 90%;
+  }
+}
+@media all and (max-width: 550px) {
+  footer div.center {
+    flex-direction: column;
+  }
+  footer div.center div:last-child {
+    margin-top: 15px;
+  }
+  footer div.center span:first-child {
+    text-align: center;
+  }
+}
+@media all and (max-width: 450px) {
+  nav div ul li:nth-child(3) {
+    order: -1;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  nav div ul {
+    flex-wrap: wrap;
+  }
+}
+@media all and (max-width: 400px) {
+  .container {
+    height: 60vh;
+  }
+  .popUp {
+    width: 320px;
+  }
 }
